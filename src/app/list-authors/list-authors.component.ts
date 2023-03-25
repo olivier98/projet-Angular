@@ -22,7 +22,7 @@ export class ListAuthorsComponent {
     this.router.navigate(['detailsAuthors/'+id]);
   }
   refrech() {
-    this.authorsService.getAuthor().subscribe(
+    this.authorsService.getAuthors().subscribe(
       data => {
         this.authors = data;
         console.log(this.authors);

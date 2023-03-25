@@ -11,8 +11,11 @@ export class AuthorsService {
 
   constructor(private htpp: HttpClient) { }
 
-  getAuthor()
+  getAuthors()
   {
     return this.htpp.get(this.baseUrl);
+  }
+  getAuthor(author_id: number){
+    return this.htpp.get(this.baseUrl + author_id);
   }
 }

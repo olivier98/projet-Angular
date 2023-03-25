@@ -1,0 +1,43 @@
+<header class="masthead" style="background-image: url('https://wallpapercave.com/wp/wp2508260.jpg')">
+  <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+              <div class="site-heading">
+                  <h1>Administration</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+<div class="container">
+
+  <div class="offset-md-10 pb-3">
+    <a routerLink="/Ajouter" class="btn btn-success">Ajouter</a>
+  </div>
+
+  <table class="table table-bordered" >
+    <thead class="bg-light" align="center">
+      <tr>
+        <th>Image</th>
+        <th>Titre</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody align="center">
+      <tr *ngFor="let post of posts">
+
+          <td><img src="{{post.image_url}}" width="100px"></td>
+          <td>{{post.title}}</td>
+          <td>{{getAuthorForPost(post.author_id)?.full_name}}</td>
+          <td>{{post.created_at | date:"dd/MM/YY"}}</td>
+          <td>
+            <button type="button" class="btn btn-primary mx-4" data-mdb-ripple-color="dark">Editer</button>
+            <button type="button" class="btn btn-danger" data-mdb-ripple-color="dark">Supprimer</button>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
